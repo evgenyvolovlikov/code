@@ -7,10 +7,10 @@
  */
 
 var twoSum_first = function (nums, target) {        // nums = [2, 3, 5, 7] target = 12
-	for (let i = 0; i < nums.length; i++) {         // i = 0 || i = 1 || i = 2
-		for (let j = i + 1; j < nums.length; j++) { // j = 1 | j = 2 | j = 3 || j = 2 | j = 3 || j = 3
-			const sum = nums[i] + nums[j];          // sum = 2 + 3 = 5 | 2 + 5 = 8 | 2 + 7 = 9 || 3 + 5 = 8 | 3 + 7 = 10 || 5 + 7 
-			if (sum === target) return [i, j];      // false | false | false || false | false || 7 === 7 true
+	for (let i = 0; i < nums.length; i++) {         // i = 0 ||| i = 1 ||| i = 2
+		for (let j = i + 1; j < nums.length; j++) { // j = 1 | j = 2 | j = 3 ||| j = 2 | j = 3  ||| j = 3
+			const sum = nums[i] + nums[j];          // sum = 2 + 3 = 5 | 2 + 5 = 8 | 2 + 7 = 9  ||| 3 + 5 = 8 | 3 + 7 = 10 ||| 5 + 7 Done 
+			if (sum === target) return [i, j];      // false | false | false ||| false | false  ||| 7 === 7 true
 		}
 	}
 };
@@ -24,7 +24,7 @@ var twoSum_second = function (nums, target) {       // nums = [2, 3, 5, 7] targe
         let numberToFind = target - nums[i];        // numberToFind = 10  ||| numberToFind = 9 ||| numberToFind = 7
         
 		for (let j = i + 1; j < nums.length; j++) { // j = 1 | j = 2 | j = 3 ||| j = 2 | j = 3 ||| j = 3
-			if (numberToFind === nums[j]) {         // 10 === 3 | 10 === 5 | 10 === 7 |i++| 9 === 5 | 9 === 7 |i++| 7 === 7 Done
+			if (numberToFind === nums[j]) {         // 10 === 3 | 10 === 5 | 10 === 7 ||| 9 === 5 | 9 === 7 ||| 7 === 7 Done
 				return [i, j];                      // i = 2, j = 3 = [2, 3]
 			}
         }
